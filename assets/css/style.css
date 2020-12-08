@@ -131,13 +131,30 @@
           align-items: center;
 }
 
+.main-embed_olapodcast .header-embed_olapodcast .player-embed_olapodcast .top-player-embed_olapodcast .div-play-embed_olapodcast.playing button svg.pause {
+  display: block;
+}
+
+.main-embed_olapodcast .header-embed_olapodcast .player-embed_olapodcast .top-player-embed_olapodcast .div-play-embed_olapodcast.playing button svg.play {
+  display: none;
+}
+
 .main-embed_olapodcast .header-embed_olapodcast .player-embed_olapodcast .top-player-embed_olapodcast .div-play-embed_olapodcast button {
   background: transparent;
   border: 0;
   cursor: pointer;
 }
 
+.main-embed_olapodcast .header-embed_olapodcast .player-embed_olapodcast .top-player-embed_olapodcast .div-play-embed_olapodcast button svg.pause {
+  display: none;
+}
+
+.main-embed_olapodcast .header-embed_olapodcast .player-embed_olapodcast .top-player-embed_olapodcast .div-play-embed_olapodcast button svg.play {
+  display: block;
+}
+
 .main-embed_olapodcast .header-embed_olapodcast .player-embed_olapodcast .top-player-embed_olapodcast .infos-box-embed_olapodcast {
+  width: 100%;
   padding-left: 25px;
 }
 
@@ -149,7 +166,6 @@
   letter-spacing: 0px;
   text-align: left;
   margin-top: 0;
-  max-width: 163px;
   color: #606060;
 }
 
