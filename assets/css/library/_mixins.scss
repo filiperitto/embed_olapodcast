@@ -1,0 +1,29 @@
+@mixin respond-to-max($point) {
+    @media only screen and (max-width: $point+px) {
+        @content;
+    }
+}
+
+@mixin respond-to-max-h($point) {
+    @media only screen and (max-height: $point+px) {
+        @content;
+    }
+}
+
+@mixin respond-between($point1, $point2) {
+    @media only screen and (min-width: $point1+px) and (max-width: $point2+px) {
+        @content;
+    }
+}
+
+@mixin respond-to-min($point) {
+    @media only screen and (min-width: $point+px) {
+        @content;
+    }
+}
+
+@mixin respond-to-min-h($point) {
+    @media only screen and (min-height: $point+px) {
+        @content;
+    }
+}
