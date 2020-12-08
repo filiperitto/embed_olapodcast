@@ -308,6 +308,7 @@
 .main-embed_olapodcast .header-embed_olapodcast .player-embed_olapodcast .bottom-player-embed_olapodcast .btn-time-embed_olapodcast button {
   padding: 2px 8px;
   border: none;
+  cursor: pointer;
   background: #313131;
   border-radius: 3.28125px;
   color: #fff;
