@@ -10,6 +10,10 @@
   background: #fff;
 }
 
+.display-none-embed_olapodcast {
+  display: none;
+}
+
 .main-embed_olapodcast {
   width: 100%;
   margin: 0;
@@ -129,6 +133,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.main-embed_olapodcast .header-embed_olapodcast .player-embed_olapodcast .top-player-embed_olapodcast .div-play-embed_olapodcast #embed_ola_podcast_play_pause {
+  outline: none;
 }
 
 .main-embed_olapodcast .header-embed_olapodcast .player-embed_olapodcast .top-player-embed_olapodcast .div-play-embed_olapodcast.playing button svg.pause {
@@ -345,6 +353,7 @@
   overflow: hidden;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
+  overflow-y: auto;
 }
 
 .main-embed_olapodcast .playlist-embed_olapodcast .acc-content-embed_olapodcast .inner {
