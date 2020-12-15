@@ -16,6 +16,9 @@ export default {
     this.currentDuration = document.querySelector("#current-duration");
     this.totalDuration = document.querySelector("#total-duration");
     this.speedlist = document.getElementById("speedlist");
+    this.playlistItems = document.querySelectorAll(
+      ".list-playlis-embed_olapodcast"
+    );
   },
   createAudioElement(audio) {
     this.audio = new Audio(audio);
@@ -35,5 +38,10 @@ export default {
     this.seekBar.max = this.audio.duration;
     this.totalDuration.innerText = secondsToMinutes(this.audio.duration);
     this.speedlist.onchange = () => this.setPlaybackRate(this.speedlist.value);
+    this.playlistItems.forEach((item, index) => {
+      item.onclick = () => {
+        this.togglePlay(index);
+      };
+    });
   },
 };

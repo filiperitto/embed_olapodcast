@@ -7,33 +7,45 @@ export default {
   audioData: audios,
   currentAudioPlaying: 0,
   isPlaying: false,
+  songs: [],
+  playbackRateValue: 1,
 
   start() {
     elements.get.call(this);
-    this.update();
+    for (let audio of audios) {
+      this.songs[audio.id] = new Audio(audio.file);
+    }
+    this.update(true);
   },
 
   play() {
     this.isPlaying = true;
-    document
-      .querySelector(".div-play-embed_olapodcast")
-      .classList.add("playing");
-    this.audio.play();
+    this.songs[this.currentAudioPlaying].play();
   },
 
   pause() {
     this.isPlaying = false;
-    document
-      .querySelector(".div-play-embed_olapodcast")
-      .classList.remove("playing");
-    this.audio.pause();
+    this.songs[this.currentAudioPlaying].pause();
   },
 
   togglePlayPause() {
+    this.isPlaying = this.playlistItems[
+      this.currentAudioPlaying
+    ].classList.contains("playing");
     if (this.isPlaying) {
       this.pause();
+      this.playlistItems[this.currentAudioPlaying].classList.remove("playing");
+      this.playlistItems[this.currentAudioPlaying].classList.add("paused");
+      document
+        .querySelector(".div-play-embed_olapodcast")
+        .classList.remove("playing");
     } else {
       this.play();
+      this.playlistItems[this.currentAudioPlaying].classList.add("playing");
+      this.playlistItems[this.currentAudioPlaying].classList.remove("paused");
+      document
+        .querySelector(".div-play-embed_olapodcast")
+        .classList.add("playing");
     }
   },
 
@@ -49,7 +61,7 @@ export default {
 
   next() {
     this.currentAudioPlaying++;
-    if (this.currentAudioPlaying == this.audioData.length) this.restart();
+    if (this.currentAudioPlaying === this.audioData.length) this.restart();
     this.update();
   },
 
@@ -61,20 +73,53 @@ export default {
     this.audio.currentTime = seekValue;
   },
 
+  timeUpdate() {
+    this.currentDuration.innerText = secondsToMinutes(this.audio.currentTime);
+    this.seekBar.value = this.audio.currentTime;
+  },
+
   setPlaybackRate(playbackRateValue) {
+    this.playbackRateValue = playbackRateValue;
     this.audio.playbackRate = playbackRateValue;
   },
 
-  timeUpdate() {
-    this.currentDuration.innerText = secondsToMinutes(this.audio.currentTime);
-    this.seekbar.value = this.audio.currentTime;
+  togglePlay(itemId) {
+    const item = this.playlistItems[itemId];
+    if (item) {
+      if (!item.classList.contains("playing")) {
+        this.currentAudioPlaying = itemId;
+        if (this.currentAudioPlaying === this.audioData.length) this.restart();
+        this.update();
+      } else {
+        this.togglePlayPause();
+      }
+    }
   },
 
-  update() {
+  update(startPlayMusic = false) {
     this.currentAudio = this.audioData[this.currentAudioPlaying];
     this.cover.src = this.currentAudio.thumbnail;
     this.title.innerText = `${this.currentAudio.title} - ${this.currentAudio.author}`;
     elements.createAudioElement.call(this, this.currentAudio.file);
+
+    if (!startPlayMusic) {
+      this.playlistItems.forEach((item) => {
+        item.classList.remove("playing");
+        item.classList.remove("paused");
+      });
+
+      this.songs.forEach((song) => {
+        song.pause();
+        song.currentTime = 0;
+      });
+      this.togglePlayPause();
+    }
+
+    this.audio = this.songs[this.currentAudioPlaying];
+    this.audio.onended = () => this.next();
+    this.audio.ontimeupdate = () => this.timeUpdate();
+    this.audio.playbackRate = this.playbackRateValue;
+    this.setSeek(0);
 
     this.audio.onloadeddata = () => {
       elements.actions.call(this);
@@ -84,13 +129,5 @@ export default {
   restart() {
     this.currentAudioPlaying = 0;
     this.update();
-  },
-
-  initAudio() {
-    speedlist.addEventListener("change", changeSpeed);
-
-    function changeSpeed(event) {
-      this.audio.playbackRate = event.target.value;
-    }
   },
 };

@@ -295,6 +295,7 @@
                                 border: none;
                                 padding: 12px;
                                 flex-shrink: 0;
+                                outline: none;
                                 svg{
                                     width: 12px;
                                 }
@@ -344,27 +345,24 @@
                                     color: #606060;
                                 }
                             }
-                        }
-                        &.playing{
-                            .list-playlis-embed_olapodcast{
-    
-                                .default{
-                                    .play{
+                            &.playing{
+                                .default {
+                                    .play {
                                         display: none;
                                     }
-                                    .pause{
-                                        display: block;
+                                    .pause {
+                                        display: initial;
                                     }
                                 }
                                 .name-epi{
                                     span{
                                         font-weight: bold;
-                                        color: #F57E20;
+                                        color: #F57E20 !important;
                                     }
                                 }
                                 .timer-epi{
                                     span{
-                                        color: #F57E20;
+                                        color: #F57E20 !important;
                                     }
                                 }
                             }

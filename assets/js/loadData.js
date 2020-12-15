@@ -14,9 +14,7 @@ if (data && data.length) {
 function createPlaylistItem(item) {
   return `<li class="bx-eb-ola">
             <div class="bx-eb-ola list-playlis-embed_olapodcast">
-              <button class="default" onclick="togglePlay(${
-                item.id
-              });" data-item="${JSON.stringify(item)}">
+              <button class="default">
                 <svg class="play" width="12" height="14" viewBox="0 0 12 14" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -36,7 +34,7 @@ function createPlaylistItem(item) {
                 <span>${item.title}</span>
               </div>
               <div class="bx-eb-ola timer-epi">
-                <span>${secondsToMinutes(16)} min</span>
+                <span>${secondsToMinutes(item.time)} min</span>
               </div>
             </div>
           </li>`;
