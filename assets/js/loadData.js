@@ -1,6 +1,35 @@
 import { secondsToMinutes } from "./utils.js";
 import data from "./data.js";
 
+let EpisodeData = [];
+
+function FetchAudio(channel_id) {
+  fetch("https://api.olapodcasts.com/graphql", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      query: `
+      query{
+        channels(id: ${channel_id}){
+          data {
+            id
+            name
+            episodes{
+              data{
+                title
+                tags
+              }
+            }
+          }
+        }
+      }`,
+    }),
+  })
+    .then((response) => response.json())
+    .then(({ data }) => console.log(data))
+    .catch((err) => console.log(err));
+}
+
 if (data && data.length) {
   const playlistElement = document.querySelector(".ul-embed_olapodcast");
   if (playlistElement) {
@@ -39,3 +68,5 @@ function createPlaylistItem(item) {
             </div>
           </li>`;
 }
+
+FetchAudio(2);
