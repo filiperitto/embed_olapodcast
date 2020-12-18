@@ -8,6 +8,10 @@
     background: #fff;
 }
 
+.display-none-embed_olapodcast {
+  display: none;
+}
+
 .main-embed_olapodcast{
     width: 100%;
     margin: 0;
@@ -76,7 +80,10 @@
             .top-player-embed_olapodcast{
                 display: flex;
                 align-items: center;
-                .div-play-embed_olapodcast{
+                .div-play-embed_olapodcast {
+                    #embed_ola_podcast_play_pause {
+                      outline: none;
+                    }
                     &.playing{
                         button{
                             svg{
@@ -252,6 +259,7 @@
         .acc-content-embed_olapodcast{
             overflow: hidden;
             transition: all 0.4s;
+            overflow-y: auto;
             .inner{
                 padding: 15px 20px 20px;
                 border-bottom: 1px solid #E2E2E2;
@@ -287,6 +295,7 @@
                                 border: none;
                                 padding: 12px;
                                 flex-shrink: 0;
+                                outline: none;
                                 svg{
                                     width: 12px;
                                 }
@@ -336,27 +345,24 @@
                                     color: #606060;
                                 }
                             }
-                        }
-                        &.playing{
-                            .list-playlis-embed_olapodcast{
-    
-                                .default{
-                                    .play{
+                            &.playing{
+                                .default {
+                                    .play {
                                         display: none;
                                     }
-                                    .pause{
-                                        display: block;
+                                    .pause {
+                                        display: initial;
                                     }
                                 }
                                 .name-epi{
                                     span{
                                         font-weight: bold;
-                                        color: #F57E20;
+                                        color: #F57E20 !important;
                                     }
                                 }
                                 .timer-epi{
                                     span{
-                                        color: #F57E20;
+                                        color: #F57E20 !important;
                                     }
                                 }
                             }
@@ -417,3 +423,4 @@
         }
     }
 }
+
