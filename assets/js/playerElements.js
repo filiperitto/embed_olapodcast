@@ -30,8 +30,7 @@ export default {
     this.muteBtn.onclick = () => this.toggleMute();
     this.unmuteBtn.onclick = () => this.toggleMute();
     this.volumeControl.oninput = () => this.setVolume(this.volumeControl.value);
-    this.volumeControl.onchange = () =>
-      this.setVolume(this.volumeControl.value);
+    this.volumeControl.onchange = () => this.setVolume(this.volumeControl.value);
 
     this.seekBar.oninput = () => this.setSeek(this.seekBar.value);
     this.seekBar.onchange = () => this.setSeek(this.seekBar.value);
