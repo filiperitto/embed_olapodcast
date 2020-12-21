@@ -360,7 +360,7 @@ input[type=range] {
                     padding-left: 20px;
                     select{
                         appearance: none;
-                        
+
                         padding: 2px 8px;
                         border: none;
                         cursor: pointer;
@@ -417,6 +417,7 @@ input[type=range] {
                     padding: 0;
                     list-style: none;
                     li{
+                        cursor: pointer;
                         .list-playlis-embed_olapodcast{
                             background: #fff;
                             display: flex;

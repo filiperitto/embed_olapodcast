@@ -614,6 +614,10 @@ input[type=range] {
   list-style: none;
 }
 
+.main-embed_olapodcast .playlist-embed_olapodcast .acc-content-embed_olapodcast .inner .ul-embed_olapodcast li {
+  cursor: pointer;
+}
+
 .main-embed_olapodcast .playlist-embed_olapodcast .acc-content-embed_olapodcast .inner .ul-embed_olapodcast li .list-playlis-embed_olapodcast {
   background: #fff;
   display: -webkit-box;
