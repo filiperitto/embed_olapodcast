@@ -1,7 +1,8 @@
 import { secondsToMinutes } from "./utils.js";
 import data from "./data.js";
 
-let EpisodeData = [];
+export let EpisodeData = [];
+export let EpisodesData = [];
 
 function FetchAudio(channel_id) {
   fetch("https://api.olapodcasts.com/graphql", {
@@ -9,35 +10,46 @@ function FetchAudio(channel_id) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       query: `
-      query{
-        channels(id: ${channel_id}){
-          data {
+  query{
+    channels(id: ${channel_id}){
+      data {
+        id
+        name
+        episodes{
+          data{
             id
-            name
-            episodes{
-              data{
-                title
-                tags
-              }
-            }
+            title
+            tags
+            thumbnail
+            content
+            play_count
+            duration
           }
         }
-      }`,
+      }
+    }
+  }`,
     }),
   })
     .then((response) => response.json())
-    .then(({ data }) => console.log(data))
-    .catch((err) => console.log(err));
-}
+    .then(({ data }) => {
+      EpisodeData = data.channels.data;
 
-if (data && data.length) {
-  const playlistElement = document.querySelector(".ul-embed_olapodcast");
-  if (playlistElement) {
-    playlistElement.innerHTML = "";
-    for (let i = 0; i < data.length; i++) {
-      playlistElement.innerHTML += createPlaylistItem(data[i]);
-    }
-  }
+      EpisodesData = EpisodeData.map((e) => e.episodes.data);
+
+      if (EpisodesData[0] && EpisodesData[0].length) {
+        const playlistElement = document.querySelector(".ul-embed_olapodcast");
+        if (playlistElement) {
+          playlistElement.innerHTML = "";
+          for (let i = 0; i < EpisodesData[0].length; i++) {
+            playlistElement.innerHTML += createPlaylistItem(EpisodesData[0][i]);
+          }
+        }
+      }
+
+      console.log(EpisodesData);
+    })
+    .catch((err) => console.log(err));
 }
 
 function createPlaylistItem(item) {

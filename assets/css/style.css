@@ -23,11 +23,6 @@
   background: #F2F2F2;
 }
 
-[type="range"]::-webkit-progress-value {
-  background-color: red;
-  height: 4px;
-}
-
 .js [type='range']::-webkit-slider-runnable-track {
   background: -webkit-gradient(linear, left top, left bottom, from(#0E53DB), to(#0E53DB)) 0/var(--sx) 100% no-repeat #F2F2F2;
   background: linear-gradient(#0E53DB, #0E53DB) 0/var(--sx) 100% no-repeat #F2F2F2;
@@ -533,6 +528,13 @@ input[type=range] {
 .main-embed_olapodcast .header-embed_olapodcast .player-embed_olapodcast .bottom-player-embed_olapodcast .players-bar-slider-embed_olapodcast .progress-bar-embed_olapodcast .progress-bar_track-embed_olapodcast::-moz-range-progress {
   background-color: #0E53DB;
   height: 4px;
+}
+
+.main-embed_olapodcast .header-embed_olapodcast .player-embed_olapodcast .bottom-player-embed_olapodcast .players-bar-slider-embed_olapodcast .progress-bar-embed_olapodcast .progress-bar_track-embed_olapodcast::range-progress {
+  height: 20px;
+  border-radius: 10px 0 0 10px;
+  background-color: #2196F3;
+  border: 2px solid #1976D2;
 }
 
 .main-embed_olapodcast .header-embed_olapodcast .player-embed_olapodcast .bottom-player-embed_olapodcast .players-bar-slider-embed_olapodcast .progress-bar-embed_olapodcast .progress-bar_handle-embed_olapodcast {
