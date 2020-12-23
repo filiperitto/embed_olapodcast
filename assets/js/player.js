@@ -75,7 +75,11 @@ export default {
 
   timeUpdate() {
     this.currentDuration.innerText = secondsToMinutes(this.audio.currentTime);
+    this.totalDuration.innerText = secondsToMinutes(this.audio.duration);
     this.seekBar.value = this.audio.currentTime;
+    this.seekBar.max = this.audio.duration;
+    this.seekBarValueForBackground.max = this.audio.duration;
+    this.seekBarValueForBackground.value = this.audio.currentTime;
   },
 
   setPlaybackRate(playbackRateValue) {

@@ -128,7 +128,7 @@
                             .progress-bar_track-embed_olapodcast{
                                 background: #FFCA00;
                             
-                                background: #F2F2F2;
+                                background: transparent;
                             
 
                                 /* para o Fire Fox */
@@ -151,6 +151,14 @@
     
                                 &::-moz-range-progress {
                                     background: #FFCA00;
+                                }
+
+                                //Estilo do Progress
+                                &::-webkit-progress-bar {
+                                    background-color: #F2F2F2;
+                                }
+                                &::-webkit-progress-value{
+                                    background-color: #FFCA00;
                                 }
                             }
                             .progress-bar_handle-embed_olapodcast{
