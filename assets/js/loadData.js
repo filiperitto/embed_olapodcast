@@ -1,32 +1,59 @@
 import { secondsToMinutes } from "./utils.js";
 import data from "./data.js";
 
-let EpisodeData = [];
-
 function FetchAudio(channel_id) {
   fetch("https://api.olapodcasts.com/graphql", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       query: `
-      query{
-        channels(id: ${channel_id}){
-          data {
-            id
-            name
-            episodes{
-              data{
-                title
-                tags
+        query{
+          channels(id: ${channel_id}){
+            data {
+              id
+              name
+              thumbnail(height: 200, width: 200)
+              description
+              episodes{
+                data{
+                  id
+                  description
+                  content
+                  title
+                  tags
+                  play_count
+                  original
+                  thumbnail(height: 100, width: 100)
+                  likes
+                }
               }
             }
           }
         }
-      }`,
+      `,
     }),
   })
     .then((response) => response.json())
-    .then(({ data }) => console.log(data))
+    .then(({ data }) => {
+      console.log(data);
+      if (
+        data &&
+        data.channels &&
+        data.channels.data &&
+        data.channels.data[0].episodes &&
+        data.channels.data[0].episodes.data &&
+        data.channels.data[0].episodes.data.length
+      ) {
+        const playlistElement = document.querySelector(".ul-embed_olapodcast");
+        if (playlistElement) {
+          playlistElement.innerHTML = "";
+          const episodes = data.channels.data[0].episodes.data;
+          for (let i = 0; i < episodes.length; i++) {
+            playlistElement.innerHTML += createPlaylistItem(episodes[i]);
+          }
+        }
+      }
+    })
     .catch((err) => console.log(err));
 }
 
@@ -69,4 +96,4 @@ function createPlaylistItem(item) {
           </li>`;
 }
 
-FetchAudio(2);
+// FetchAudio(3000);

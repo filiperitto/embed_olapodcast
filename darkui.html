@@ -21,6 +21,7 @@
 
 <body class="bx-eb-ola body-embed_olapodcast dark-ui-embed_olapodcast">
 	<div class="bx-eb-ola main-embed_olapodcast">
+
 		<div class="bx-eb-ola header-embed_olapodcast">
 			<div class="bx-eb-ola top-box-embed_olapodcast">
 				<div class="cta-box-embed_olapodcast">
@@ -94,7 +95,7 @@
 							d="M50.0285 4.30857L55.3094 17.9218C55.6201 18.6527 55.0841 19.4567 54.2858 19.4446H52.355C51.9044 19.4446 51.5024 19.1766 51.3318 18.7624L50.8322 17.5443C50.6618 17.1301 50.2537 16.8621 49.809 16.8621H45.6612C45.2105 16.8621 44.8085 17.1362 44.6379 17.5564L44.1507 18.7624C43.9802 19.1826 43.5782 19.4567 43.1275 19.4567H41.288C40.4961 19.4567 39.9601 18.6527 40.2708 17.9218L45.5517 4.30857C45.7283 3.9005 46.1242 3.63858 46.5689 3.63858H49.0114C49.4559 3.63858 49.8579 3.9005 50.0285 4.30857ZM46.8492 13.1526H48.6521C49.0053 13.1526 49.249 12.7933 49.1211 12.4644L48.2258 10.1986C48.0614 9.77834 47.4645 9.77834 47.2938 10.1986L46.3863 12.4644C46.2523 12.7933 46.4959 13.1526 46.8492 13.1526Z"
 							fill="#313131" />
 					</svg>
-					<a href="javascript:void(0)" class="btn-embed_olapodcast">Cadastrar</a>
+					<a href="https://www.olapodcasts.com" class="btn-embed_olapodcast">Cadastrar</a>
 
 				</div>
 				<div class="thumb-embed_olapodcast">
@@ -266,140 +267,58 @@
 								d="M50.0285 4.30857L55.3094 17.9218C55.6201 18.6527 55.0841 19.4567 54.2858 19.4446H52.355C51.9044 19.4446 51.5024 19.1766 51.3318 18.7624L50.8322 17.5443C50.6618 17.1301 50.2537 16.8621 49.809 16.8621H45.6612C45.2105 16.8621 44.8085 17.1362 44.6379 17.5564L44.1507 18.7624C43.9802 19.1826 43.5782 19.4567 43.1275 19.4567H41.288C40.4961 19.4567 39.9601 18.6527 40.2708 17.9218L45.5517 4.30857C45.7283 3.9005 46.1242 3.63858 46.5689 3.63858H49.0114C49.4559 3.63858 49.8579 3.9005 50.0285 4.30857ZM46.8492 13.1526H48.6521C49.0053 13.1526 49.249 12.7933 49.1211 12.4644L48.2258 10.1986C48.0614 9.77834 47.4645 9.77834 47.2938 10.1986L46.3863 12.4644C46.2523 12.7933 46.4959 13.1526 46.8492 13.1526Z"
 								fill="#313131" />
 						</svg>
-						<a href="javascript:void(0)" class="btn-embed_olapodcast">Cadastrar</a>
+						<a href="https://www.olapodcasts.com" class="btn-embed_olapodcast">Cadastrar</a>
 
 					</div>
 				</div>
 				<div class="bx-eb-ola bottom-player-embed_olapodcast">
 					<div class="bx-eb-ola players-bar-slider-embed_olapodcast">
 						<div class="bx-eb-ola progress-bar-embed_olapodcast">
-							<input type="range" min="0" max="0" id="embed_olapodcast_seekbar" step="1">
+<<<<<<< HEAD
+							<progress class="bx-eb-ola progress-bar_track-embed_olapodcast" type="range" min="0" max="100" value="0"
+								id="track_embed_ola_podscast_background" step="1" style=""></progress>
+							<input class="bx-eb-ola progress-bar_track-embed_olapodcast" type="range" min="0" max="100" value="0"
+								id="embed_olapodcast_seekbar" step="1" style="width: calc(100% + 12px);">
+=======
+							<progress class="bx-eb-ola progress-bar_track-embed_olapodcast"
+							type="range" min="0" max="100" value="0" id="track_embed_ola_podscast_background" step="1"
+							style=""></progress>
+							<input class="bx-eb-ola progress-bar_track-embed_olapodcast"
+								type="range" min="0" max="100" value="0" id="embed_olapodcast_seekbar" step="1"
+								style="width: calc(100% + 12px);">
+>>>>>>> 863491d499bf8944f26e3acb8e5c9c98afa5f527
 
-							<button id="embed_olapodcast_unmuted">mute</button>
-							<button class="display-none-embed_olapodcast" id="embed_olapodcast_muted">unmute</button>
-							<input type="range" min="0" max="100" id="embed_olapodcast_vol_control" step="1">
+							<button style="display: none;" id="embed_olapodcast_unmuted">mute</button>
+							<button style="display: none;" class="display-none-embed_olapodcast"
+								id="embed_olapodcast_muted">unmute</button>
+							<input style="display: none;" type="range" min="0" max="100" id="embed_olapodcast_vol_control" step="1">
 						</div>
 						<div class="bx-eb-ola progress-bar-time-embed_olapodcast left" id="current-duration">00:00</div>
 						<div class="bx-eb-ola progress-bar-time-embed_olapodcast right" id="total-duration">00:00</div>
 					</div>
-					<select id="speedlist" class="bx-eb-ola btn-playbackrate-embed_olapodcast">
-						<option value="0.5">0.5x</option>
-						<option value="1" selected>1x</option>
-						<option value="1.5">1.5x</option>
-						<option value="2">2x</option>
-					</select>
+					<div class="bx-eb-ola btn-time-embed_olapodcast">
+						<select id="speedlist" class="bx-eb-ola btn-playbackrate-embed_olapodcast">
+							<option value="0.5">0.5x</option>
+							<option value="1" selected>1.0x</option>
+							<option value="1.5">1.5x</option>
+							<option value="2">2.0x</option>
+						</select>
+					</div>
 				</div>
 			</div>
 		</div>
 
 		<div class="bx-eb-ola playlist-embed_olapodcast">
 
-			<div class="accordion">
-				<div id="acc1" class="bx-eb-ola acc-content-embed_olapodcast">
-					<div class="bx-eb-ola inner">
-						<div class="bx-eb-ola header-playlist">
-							<span>53 episódio</span>
-							<span>50 horas 35 minutos</span>
-						</div>
-						<ul class="bx-eb-ola ul-embed_olapodcast">
-							<li class="bx-eb-ola">
-								<div class="bx-eb-ola list-playlis-embed_olapodcast">
-									<button class="default">
-										<svg class="play" width="12" height="14" viewBox="0 0 12 14" fill="none"
-											xmlns="http://www.w3.org/2000/svg">
-											<path
-												d="M11 5.26795C12.3333 6.03775 12.3333 7.96225 11 8.73205L3.5 13.0622C2.16666 13.832 0.499999 12.8697 0.499999 11.3301L0.5 2.66987C0.5 1.13027 2.16667 0.168021 3.5 0.937822L11 5.26795Z"
-												fill="#313131" />
-										</svg>
-										<svg class="pause" width="14" height="16" viewBox="0 0 14 16" fill="none"
-											xmlns="http://www.w3.org/2000/svg">
-											<rect x="10" width="4" height="16" rx="2" fill="#F57E20" />
-											<rect width="4" height="16" rx="2" fill="#F57E20" />
-										</svg>
-									</button>
-									<div class="bx-eb-ola min-thumb">
-										<img alt="" src="assets/img/mini-thumb.jpg">
-									</div>
-									<div class="bx-eb-ola name-epi">
-										<span>O que é sorvete? Ft. Márcia Garbin</span>
-									</div>
-									<div class="bx-eb-ola timer-epi">
-										<span>57:30 min</span>
-									</div>
-								</div>
-							</li>
-							<li class="bx-eb-ola playing">
-								<div class="bx-eb-ola list-playlis-embed_olapodcast">
-									<button class="default">
-										<svg class="play" width="12" height="14" viewBox="0 0 12 14" fill="none"
-											xmlns="http://www.w3.org/2000/svg">
-											<path
-												d="M11 5.26795C12.3333 6.03775 12.3333 7.96225 11 8.73205L3.5 13.0622C2.16666 13.832 0.499999 12.8697 0.499999 11.3301L0.5 2.66987C0.5 1.13027 2.16667 0.168021 3.5 0.937822L11 5.26795Z"
-												fill="#313131" />
-										</svg>
-										<svg class="pause" width="14" height="16" viewBox="0 0 14 16" fill="none"
-											xmlns="http://www.w3.org/2000/svg">
-											<rect x="10" width="4" height="16" rx="2" fill="#F57E20" />
-											<rect width="4" height="16" rx="2" fill="#F57E20" />
-										</svg>
-									</button>
-									<div class="bx-eb-ola min-thumb">
-										<img alt="" src="assets/img/mini-thumb.jpg">
-									</div>
-									<div class="bx-eb-ola name-epi">
-										<span>Gastronomia Vegetal - Ft. Daniel Biron Silva Sauro</span>
-									</div>
-									<div class="bx-eb-ola timer-epi">
-										<span>57:30 min</span>
-									</div>
-								</div>
-							</li>
-							<li class="bx-eb-ola">
-								<div class="bx-eb-ola list-playlis-embed_olapodcast">
-									<button class="default">
-										<svg class="play" width="12" height="14" viewBox="0 0 12 14" fill="none"
-											xmlns="http://www.w3.org/2000/svg">
-											<path
-												d="M11 5.26795C12.3333 6.03775 12.3333 7.96225 11 8.73205L3.5 13.0622C2.16666 13.832 0.499999 12.8697 0.499999 11.3301L0.5 2.66987C0.5 1.13027 2.16667 0.168021 3.5 0.937822L11 5.26795Z"
-												fill="#313131" />
-										</svg>
-										<svg class="pause" width="14" height="16" viewBox="0 0 14 16" fill="none"
-											xmlns="http://www.w3.org/2000/svg">
-											<rect x="10" width="4" height="16" rx="2" fill="#F57E20" />
-											<rect width="4" height="16" rx="2" fill="#F57E20" />
-										</svg>
-									</button>
-									<div class="bx-eb-ola min-thumb">
-										<img alt="" src="assets/img/mini-thumb.jpg">
-									</div>
-									<div class="bx-eb-ola name-epi">
-										<span>O que é sorvete? Ft. Márcia Garbin</span>
-									</div>
-									<div class="bx-eb-ola timer-epi">
-										<span>57:30 min</span>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div><!-- / .inner -->
-				</div>
-
-				<a href="#acc1" class="bx-eb-ola header-acc-embed_olapodcast">
-					<span class="ver-menos">Ver menos
-						<svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M2.17947 0.355353L7.11747 5.0691L12.0555 0.355353C12.5518 -0.118451 13.3536 -0.118451 13.85 0.355353C14.3463 0.829157 14.3463 1.59453 13.85 2.06834L8.00835 7.64465C7.51201 8.11845 6.71022 8.11845 6.21387 7.64465L0.372259 2.06834C-0.124086 1.59453 -0.124086 0.829157 0.372259 0.355353C0.868605 -0.106302 1.68312 -0.118451 2.17947 0.355353Z"
-								fill="black" />
-						</svg>
-					</span>
-					<span class="ver-mais">Ver mais episódios
-						<svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M2.17947 0.355353L7.11747 5.0691L12.0555 0.355353C12.5518 -0.118451 13.3536 -0.118451 13.85 0.355353C14.3463 0.829157 14.3463 1.59453 13.85 2.06834L8.00835 7.64465C7.51201 8.11845 6.71022 8.11845 6.21387 7.64465L0.372259 2.06834C-0.124086 1.59453 -0.124086 0.829157 0.372259 0.355353C0.868605 -0.106302 1.68312 -0.118451 2.17947 0.355353Z"
-								fill="black" />
-						</svg>
-					</span>
-				</a>
+			<div id="acc1" class="bx-eb-ola acc-content-embed_olapodcast scrollhere">
+				<div class="bx-eb-ola inner">
+					<div class="bx-eb-ola header-playlist">
+						<span>53 episódio</span>
+						<span>50 horas 35 minutos</span>
+					</div>
+					<ul class="bx-eb-ola ul-embed_olapodcast">
+					</ul>
+				</div><!-- / .inner -->
 			</div>
 
 		</div>
@@ -410,7 +329,8 @@
 
 	<script src="./assets/js/loadData.js" type="module"></script>
 	<script src="./assets/js/index.js" type="module"></script>
-	<script src="./assets/js/accordion.js"></script>
+	<script src="./assets/js/fetchAudio.js"></script>
+	<!-- <script src="./assets/js/accordion.js"></script> -->
 
 	<!--  www.olapodcasts.com.br -->
 

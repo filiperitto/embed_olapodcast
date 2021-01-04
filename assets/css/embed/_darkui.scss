@@ -4,6 +4,42 @@
     }
 }
 .dark-ui-embed_olapodcast{
+    .scrollhere,
+    .scrollola{
+        
+        scrollbar-color: #373737 transparent;
+        scrollbar-width: thin;
+        &::-webkit-scrollbar-track {
+            background: #EEE3F6;
+            border-radius: 5px;
+        }
+        &::-webkit-scrollbar {
+            width: 9px;
+            height: 9px;
+            scroll-behavior: smooth;
+        }
+        &::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius: 5px;
+        }
+        &::-webkit-scrollbar-track:hover {
+            background: #202020;
+            border-radius: 5px;
+        }
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: #373737;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: #373737;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+
     .main-embed_olapodcast{
         border: none;
         .header-embed_olapodcast{
@@ -91,6 +127,39 @@
                             }
                             .progress-bar_track-embed_olapodcast{
                                 background: #FFCA00;
+                            
+                                background: transparent;
+                            
+
+                                /* para o Fire Fox */
+                                &::-moz-range-thumb {
+                                    background: #FFCA00;
+                                }
+                                
+                                /* para browsers da MS */
+                                &::-ms-range-thumb {
+                                    background: #FFCA00;
+                                }
+                                
+                                &::-webkit-slider-thumb{
+                                    background: #FFCA00;
+                                }
+    
+                                &::-ms-fill-lower{
+                                    background: #FFCA00;
+                                }
+    
+                                &::-moz-range-progress {
+                                    background: #FFCA00;
+                                }
+
+                                //Estilo do Progress
+                                &::-webkit-progress-bar {
+                                    background-color: #F2F2F2;
+                                }
+                                &::-webkit-progress-value{
+                                    background-color: #FFCA00;
+                                }
                             }
                             .progress-bar_handle-embed_olapodcast{
                                 background: #FFCA00;
@@ -134,25 +203,23 @@
                                         color: #fff;
                                     }
                                 }
-                            }
-                            &.playing{
-                                .list-playlis-embed_olapodcast{
-        
+                                
+                                &.playing{
                                     .default{
                                         .pause{
                                             rect{
-                                                fill: #FFCA00;
+                                                fill: #FFCA00 !important;
                                             }
                                         }
                                     }
                                     .name-epi{
                                         span{
-                                            color: #FFCA00;
+                                            color: #FFCA00 !important;
                                         }
                                     }
                                     .timer-epi{
                                         span{
-                                            color: #FFCA00;
+                                            color: #FFCA00 !important;
                                         }
                                     }
                                 }

@@ -13,6 +13,9 @@ export default {
       "#embed_olapodcast_vol_control"
     );
     this.seekBar = document.querySelector("#embed_olapodcast_seekbar");
+    this.seekBarValueForBackground = document.querySelector(
+      "#track_embed_ola_podscast_background"
+    );
     this.currentDuration = document.querySelector("#current-duration");
     this.totalDuration = document.querySelector("#total-duration");
     this.speedlist = document.getElementById("speedlist");
@@ -35,7 +38,17 @@ export default {
 
     this.seekBar.oninput = () => this.setSeek(this.seekBar.value);
     this.seekBar.onchange = () => this.setSeek(this.seekBar.value);
-    this.seekBar.max = this.audio.duration;
+
+<<<<<<< HEAD
+    this.seekBarValueForBackground.oninput = () =>
+      this.setSeek(this.seekBarValueForBackground.value);
+    this.seekBarValueForBackground.onchange = () =>
+      this.setSeek(this.seekBarValueForBackground.value);
+=======
+    this.seekBarValueForBackground.oninput = () => this.setSeek(this.seekBarValueForBackground.value);
+    this.seekBarValueForBackground.onchange = () => this.setSeek(this.seekBarValueForBackground.value);
+>>>>>>> 863491d499bf8944f26e3acb8e5c9c98afa5f527
+
     this.totalDuration.innerText = secondsToMinutes(this.audio.duration);
     this.speedlist.onchange = () => this.setPlaybackRate(this.speedlist.value);
     this.playlistItems.forEach((item, index) => {
