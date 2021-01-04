@@ -39,15 +39,8 @@ export default {
     this.seekBar.oninput = () => this.setSeek(this.seekBar.value);
     this.seekBar.onchange = () => this.setSeek(this.seekBar.value);
 
-<<<<<<< HEAD
-    this.seekBarValueForBackground.oninput = () =>
-      this.setSeek(this.seekBarValueForBackground.value);
-    this.seekBarValueForBackground.onchange = () =>
-      this.setSeek(this.seekBarValueForBackground.value);
-=======
     this.seekBarValueForBackground.oninput = () => this.setSeek(this.seekBarValueForBackground.value);
     this.seekBarValueForBackground.onchange = () => this.setSeek(this.seekBarValueForBackground.value);
->>>>>>> 863491d499bf8944f26e3acb8e5c9c98afa5f527
 
     this.totalDuration.innerText = secondsToMinutes(this.audio.duration);
     this.speedlist.onchange = () => this.setPlaybackRate(this.speedlist.value);
